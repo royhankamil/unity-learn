@@ -10,8 +10,8 @@ public class Box : MonoBehaviour
 
     public void Setup(Transform parent)
     {
-        Transform.SetParent(parent, false);
-        Transform.localPosition = startPosition;
+        transform.SetParent(parent, false);
+        transform.localPosition = startPosition;
     }
 
     private void Update()
@@ -22,12 +22,12 @@ public class Box : MonoBehaviour
             return;
         }
 
-        transform.Translate(Vector3.right * (velocity * Time.deltaTime), Space.Self)
+        transform.Translate(Vector3.right * (velocity * Time.deltaTime), Space.Self);
+    }
+    private void DestroyBox()
+    {
+        var spawner = FindObjectOfType<BoxSpawner>();
+        spawner.DestroyedBox(this);
     }
 }
 
-private void DestroyBox()
-{
-    var spawner = FindObjectOfType<BoxSpawner>();
-    spawner.DestroyedBox(this);
-}

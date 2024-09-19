@@ -1,8 +1,10 @@
-﻿using UnityEngine;
+﻿
+using System.Collections.Generic;
+using UnityEngine;
 
 public class BoxSpawner : MonoBehaviour
 {
-    public float spawnDelay = 0.1;
+    public float spawnDelay = 0.1f;
     public Box boxPrefab;
 
     public Transform[] belts;
