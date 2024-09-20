@@ -1,0 +1,4 @@
+repository "FactoryApp@Tiga_Pillar@cloud"
+  path "/"
+    br "/main"
+    co "/main"
