@@ -11,7 +11,7 @@ public class BoxSpawner : MonoBehaviour
 
     private float currentCooldown;
 
-    private List<Box> activeBoxes;
+    private List<Box> activeBoxes = new List<Box>();
 
     public void DestroyedBox(Box destroyedBox)
     {
@@ -33,7 +33,7 @@ public class BoxSpawner : MonoBehaviour
         }
 
         if (Input.GetKeyDown(KeyCode.Return))
-            gameObject.active = false;
+            gameObject.SetActive(false);
     }
 
     private void ResetCooldown()
